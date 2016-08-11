@@ -22,12 +22,8 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="app.css" />
     <Content Include="index.html" />
     <Content Include="web.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <TypeScriptCompile Include="app.ts" />
   </ItemGroup>
   <ItemGroup>
     <None Include="web.Debug.config">
@@ -36,6 +32,15 @@
     <None Include="web.Release.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Doer\ASyncDoer.ts" />
+    <TypeScriptCompile Include="Doer\IDoer.ts" />
+    <TypeScriptCompile Include="Doer\SyncDoer.ts" />
+    <TypeScriptCompile Include="Event.ts" />
+    <TypeScriptCompile Include="EventPump.ts" />
+    <TypeScriptCompile Include="IEventObject.ts" />
+    <TypeScriptCompile Include="test.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">12.0</VisualStudioVersion>
