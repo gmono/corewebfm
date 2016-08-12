@@ -2,7 +2,8 @@
     export class EventPump {
 
         objects: {}
-    
+
+        doer: IDoer;
         addobject(obj: IEventObject): number {
             //这个函数添加一个对象并返回id号
             var id = 0;
@@ -27,9 +28,13 @@
             return undefined;
         }
         throwevent(e: Event) {
-
+            var obj = this.objects[e.des] as IEventObject ;
+            if (obj == undefined || obj == null) return;
+            this.doer.dosome(() => obj.event(e));
         }
-        setdoer(doer:IDoer) {
+        setdoer(doer: IDoer) {
+            if (doer == undefined || doer == null) return;
+            this.doer = doer;
         }
     }
 }

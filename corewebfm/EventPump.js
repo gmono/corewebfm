@@ -28,8 +28,15 @@ var CWF;
             return undefined;
         };
         EventPump.prototype.throwevent = function (e) {
+            var obj = this.objects[e.des];
+            if (obj == undefined || obj == null)
+                return;
+            this.doer.dosome(function () { return obj.event(e); });
         };
         EventPump.prototype.setdoer = function (doer) {
+            if (doer == undefined || doer == null)
+                return;
+            this.doer = doer;
         };
         return EventPump;
     }());

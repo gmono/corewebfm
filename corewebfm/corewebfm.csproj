@@ -39,8 +39,12 @@
     <TypeScriptCompile Include="Doer\SyncDoer.ts" />
     <TypeScriptCompile Include="Event.ts" />
     <TypeScriptCompile Include="EventPump.ts" />
+    <TypeScriptCompile Include="FileManager\FileBlock.ts" />
     <TypeScriptCompile Include="IEventObject.ts" />
     <TypeScriptCompile Include="test.ts" />
+    <TypeScriptCompile Include="UI\Box\Box.ts" />
+    <TypeScriptCompile Include="UI\Box\BoxEvents.ts" />
+    <TypeScriptCompile Include="UI\Control\Control.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">12.0</VisualStudioVersion>

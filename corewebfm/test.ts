@@ -2,6 +2,5 @@
 
 var t = {};
 document.title = t[0];
-t["hello"] = "hello";
+t[5] = "hello";
 document.title = t[0];
-document.title = t["hello"];
