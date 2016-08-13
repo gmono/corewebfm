@@ -6,7 +6,7 @@ var CWF;
         function Control(parent) {
             this.parent = parent;
         }
-        Control.prototype.event = function (e) {
+        Control.prototype.eventactive = function (e) {
         };
         return Control;
     }());

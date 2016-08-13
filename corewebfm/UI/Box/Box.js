@@ -24,15 +24,13 @@ var CWF;
             ele.onkeyup = function (e) { return _this.send(CWF.EKey.Release, e); };
             ele.onkeypress = function (e) { return _this.send(CWF.EKey.Enter, e); };
         };
-        Box.prototype.send = function (id, msg) {
-            var e = new CWF.Event();
-            e.eid = id;
-            e.msg = msg;
+        Box.prototype.send = function (eid, msg) {
+            var e = new CWF.Event(null, eid, msg);
             for (var t = 0; t < this.eps.length; ++t) {
                 var ep = this.eps[t];
                 var des = this.mainids[t];
-                e.des = des;
-                ep.throwevent(e);
+                var te = new CWF.Event(des, e.eid, e.msg);
+                ep.throwevent(te);
             }
         };
         return Box;

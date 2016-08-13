@@ -4,12 +4,24 @@
 <head>
     <meta charset="utf-8" />
     <title>TypeScript HTML App</title>
-    <script src="test.js"></script>
-    
+    <script src="GUID/GUID.js"></script>
+    <script src="Event.js"></script>
+    <script src="EventFun.js"></script>
+    <script src="EventPump.js"></script>
+    <script src="Doer/SyncDoer.js"></script>
 </head>
 <body>
     <h1>TypeScript HTML App</h1>
 
     <div id="content"></div>
+    <script>
+        var pump = new CWF.EventPump();
+        pump.setdoer(new CWF.SyncDoer());
+        var sid = pump.addobject(new CWF.EventFun(function (e) { alert(e.msg); }, null, "alert"));
+        var sid2 = pump.addobject(new CWF.EventFun(function (e) { alert("ggg"+e.msg); }, null, "alert"));
+
+        pump.throwevent(new CWF.Event(sid, 0, "我是高子健"));
+        pump.throwbyclass(new CWF.Event(null, 0, "hello world"),"alert");
+    </script>
 </body>
 </html>

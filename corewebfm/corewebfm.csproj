@@ -38,12 +38,15 @@
     <TypeScriptCompile Include="Doer\IDoer.ts" />
     <TypeScriptCompile Include="Doer\SyncDoer.ts" />
     <TypeScriptCompile Include="Event.ts" />
+    <TypeScriptCompile Include="EventFun.ts" />
     <TypeScriptCompile Include="EventPump.ts" />
     <TypeScriptCompile Include="FileManager\FileBlock.ts" />
+    <TypeScriptCompile Include="GUID\GUID.ts" />
     <TypeScriptCompile Include="IEventObject.ts" />
     <TypeScriptCompile Include="test.ts" />
     <TypeScriptCompile Include="UI\Box\Box.ts" />
     <TypeScriptCompile Include="UI\Box\BoxEvents.ts" />
+    <TypeScriptCompile Include="UI\Box\OneBox.ts" />
     <TypeScriptCompile Include="UI\Control\Control.ts" />
   </ItemGroup>
   <PropertyGroup>

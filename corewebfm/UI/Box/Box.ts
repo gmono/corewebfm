@@ -4,7 +4,7 @@
     export class Box {
         eps: Array<EventPump>;
         maincont: Control;//主控件 构造函数中生成 向外部提供
-        mainids: Array<number>;//主控件在各个pump中的id号 
+        mainids: Array<string>;//主控件在各个pump中的sid号 
         constructor(ele: HTMLElement, pumps: Array<EventPump>) {
             this.eps = pumps;
             this.maincont = new Control();
@@ -26,15 +26,13 @@
             ele.onkeyup = (e) => this.send(EKey.Release, e);
             ele.onkeypress = (e) => this.send(EKey.Enter, e);
         }
-        send(id: number, msg: any) {
-            var e = new Event();
-            e.eid = id;
-            e.msg = msg;
+        send(eid: number, msg: any) {
+            var e = new Event(null, eid, msg);
             for (var t = 0; t < this.eps.length; ++t) {
                 var ep = this.eps[t];
                 var des = this.mainids[t];
-                e.des = des;
-                ep.throwevent(e);
+                var te = new Event(des, e.eid, e.msg);
+                ep.throwevent(te);
             }
         }
     }

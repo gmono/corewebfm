@@ -1,7 +1,10 @@
 var CWF;
 (function (CWF) {
     var Event = (function () {
-        function Event() {
+        function Event(des, eventid, message) {
+            this.des = des;
+            this.eid = eventid;
+            this.msg = message;
         }
         return Event;
     }());

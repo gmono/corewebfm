@@ -6,7 +6,7 @@
         constructor(parent?: Control) {
             this.parent = parent;
         }
-        event(e: Event) {
+        eventactive(e: Event) {
         }
 
     }
